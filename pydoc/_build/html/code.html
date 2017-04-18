@@ -1,0 +1,923 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>main.py &#8212; primers design 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="primers design 1 documentation" href="index.html" />
+    <link rel="next" title="pseudoMultiplex.py" href="multiplex_machines.html" />
+    <link rel="prev" title="Welcome to primers design’s documentation!" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="multiplex_machines.html" title="pseudoMultiplex.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to primers design’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-main">
+<span id="main-py"></span><h1>main.py<a class="headerlink" href="#module-main" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="main.launch">
+<code class="descclassname">main.</code><code class="descname">launch</code><span class="sig-paren">(</span><em>path_of_data_file</em><span class="sig-paren">)</span><a class="headerlink" href="#main.launch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Launches the algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path_of_data_file</strong> &#8211; the path of the data file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but creates a bed file corresponding to good chromosomic range.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.seconds_to_str">
+<code class="descclassname">main.</code><code class="descname">seconds_to_str</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#main.seconds_to_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the time from seconds to hh:mm:ss:ms
+:param t: the time in second
+:return: return a string as hh:mm:ss:ms</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-parsing">
+<span id="parsing-py"></span><h1>parsing.py<a class="headerlink" href="#module-parsing" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="parsing.get_data_from_csv">
+<code class="descclassname">parsing.</code><code class="descname">get_data_from_csv</code><span class="sig-paren">(</span><em>name_of_file</em><span class="sig-paren">)</span><a class="headerlink" href="#parsing.get_data_from_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the file containing all the information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of target objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-target">
+<span id="target-py"></span><h1>target.py<a class="headerlink" href="#module-target" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="target.Target">
+<em class="property">class </em><code class="descclassname">target.</code><code class="descname">Target</code><span class="sig-paren">(</span><em>target_components</em><span class="sig-paren">)</span><a class="headerlink" href="#target.Target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Target is an object that refer to one line in the CSV that is to say a variant.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>target_components</strong> &#8211; a list resulting of the command line.split() in the csv. Contains:</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>no_chromosome</strong> &#8211; the chromosome number where the variant is.</li>
+<li><strong>mutation_pos</strong> &#8211; the position of the mutation (variant).</li>
+<li><strong>var_freq</strong> &#8211; the frequency of the variant.</li>
+<li><strong>bio_imp</strong> &#8211; <p>the biological implication of the variant could be (order by priority).</p>
+<ul>
+<li>Damaging</li>
+<li>Potentially damaging</li>
+<li>Probably polymorphism</li>
+<li>Unknown</li>
+</ul>
+</li>
+<li><strong>var_key</strong> &#8211; the id of the variant containing chromosome number + mutation position.</li>
+<li><strong>range</strong> &#8211; the number of nucleotides taken into account around variant                 for designing primers pairs.</li>
+<li><strong>sequence</strong> &#8211; the target sequence containing the variant (empty initially)</li>
+<li><strong>all_primers_pairs</strong> &#8211; a list containing all valid primers pairs within the target sequence                             empty at initialisation</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="target.Target.compute_list_primers_pairs">
+<code class="descname">compute_list_primers_pairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.compute_list_primers_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function to design a set of primers pairs that amplify the variant.
+Remind you that there is range nucleotide around the variant.
+The function does the following:</p>
+<ol class="arabic simple">
+<li>compute_optimal_primers_pairs() computes all possible primers pairs of the sequence.        to do that, each iteration reduce the length of the  (non symmetrical sub-sequence calculation) by 5        and design_primers() is execute at each iteration.        Note that we keep just primers pairs that produce an amplicon of length &lt;= 90 (requirement from Thermofisher),        and no snp in the primers sequences.        We will get a list containing all primers pairs calculated.</li>
+<li>perform_blast() performs a blast for each primers pair and each primer taken individually.        will add hybridisation site for each primer.        Refers to blast class for more information.</li>
+<li>sort_by_tfgr() a function that sort primers pairs by size of amplicon (minimum range of tfgr).</li>
+<li>remove_primers_pair_with_hybridisation() will remove all primers pairs whose primers        could hybridise something elsewhere in the genome.        Be careful, it&#8217;s BLAST class that initialize hybridisation sites</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>blast</strong> &#8211; <ul class="simple">
+<li>True if the user want to blast with all primers pairs computed (default)</li>
+<li>False otherwise</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>refer to config.py to set boolean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nothing but store the result in all_primers_pairs variable of target.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.compute_optimal_primers_pairs">
+<code class="descname">compute_optimal_primers_pairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.compute_optimal_primers_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a list of primers pairs containing primersPair instance
+Use this function to get a list of primers pairs respecting all constraints
+with no post-treatment (no BLAST, no sort,...)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of primersPair instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.compute_optimal_raw_primers_pairs">
+<code class="descname">compute_optimal_raw_primers_pairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.compute_optimal_raw_primers_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>/!do not call this function to compute all_primers_pairs final list
+call self.compute_optimal_primers_pairs() for no post-treatment
+or call self.compute_list_primers_pairs() for some post-treatment.</p>
+<p>Computes list of primers pairs within the sequence containing the variant.
+Be careful primers pair are dic (raw output from primer3 algo) and not
+primersPair instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return all_primers_pairs:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">a list containing raw output from design_primers function such as :                                    [primers1, primers2,...]                                    with primers 1 a dic (output of primer3 algo)        :return ranges: containing range_temp_left for each primers added in all_primers_pairs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.design_primers">
+<code class="descname">design_primers</code><span class="sig-paren">(</span><em>range</em>, <em>sequence</em><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.design_primers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Designs a pair of primers (right and left) using primer3 library.
+Note that primer3 won&#8217;t design primers with hairpin, self hybridisation and
+hybridisation with the right and left primers
+Be careful, parameters are approximated to be as correct as Thermofisher.
+See config.py for parametrisation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>range</strong> &#8211; the number of nucleotide taken into account around the variant</li>
+<li><strong>sequence</strong> &#8211; the sequence containing the variant obtained by get_target_sequence function.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a primers pair</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.get_snp">
+<code class="descname">get_snp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.get_snp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all existing snp (from my variant library) in the target sequence.
+Why ? Because a snp can&#8217;t be in the primers sequences.
+internet connection required.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of snp such as [[id, position, gmaf],[...],[...],...]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.get_target_sequence">
+<code class="descname">get_target_sequence</code><span class="sig-paren">(</span><em>range</em><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.get_target_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches from the fasta file hg19 (saved locally) the sequence containing the variant.
+pysam library is used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>range</strong> &#8211; the number of nucleotide taken into account around the variant</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the sequence containing the variant (in the middle of the sequence)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.perform_blast">
+<code class="descname">perform_blast</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.perform_blast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a blast for each primers pair and each primer taken individually        will add hybridisation site for each primer.        Refers to blast class for more information.        The attribute all_primers_pairs must <strong>not</strong> be empty (run compute_list_primers_pairs() before)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nothing but have a side effect on all_primers_pairs</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.remove_primers_pair_with_hybridisation">
+<code class="descname">remove_primers_pair_with_hybridisation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.remove_primers_pair_with_hybridisation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all primers pairs whose primers could hybridise something elsewhere in the genome.        The attribute all_primers_pairs must <strong>not</strong> be empty (run compute_list_primers_pairs() before)
+Be careful, it&#8217;s BLAST class that initialize hybridisation sites</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nothing but have a side effect on all_primers_pairs</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.sort_by_penalty">
+<code class="descname">sort_by_penalty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.sort_by_penalty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts primers pairs by ascending penalties.
+Primer3 compute for each left primer and right primer a penalty.
+Higher is the penalty further the characteristics from optimal parameters passed in primer3 algorithm.
+Bubble sort</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nothing but have a side effect on all_primers_pairs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="target.Target.sort_by_tfgr">
+<code class="descname">sort_by_tfgr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#target.Target.sort_by_tfgr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts primers pairs by size of amplicon (minimum range of tfgr)        The attribute all_primers_pairs must <strong>not</strong> be empty (run compute_list_primers_pairs() before).
+Bubble sort.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nothing but have a side effect on all_primers_pairs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-primer">
+<span id="primer-py"></span><h1>primer.py<a class="headerlink" href="#module-primer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="primer.Primer">
+<em class="property">class </em><code class="descclassname">primer.</code><code class="descname">Primer</code><span class="sig-paren">(</span><em>sequence</em>, <em>left_or_right</em>, <em>relative_pos</em>, <em>range_left</em>, <em>target</em>, <em>penalty=0</em><span class="sig-paren">)</span><a class="headerlink" href="#primer.Primer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Primer is an object representing a primer either left or right.</p>
+<p>Two primers are equal if their sequence are the same and their TFGP are equal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>target</strong> &#8211; the target instance where the primer come from.</li>
+<li><strong>sequence</strong> &#8211; sequence of the primer</li>
+<li><strong>left_or_right</strong> &#8211; left if it&#8217;s a left primer, right otherwise</li>
+<li><strong>relative_pos</strong> &#8211; relative position (get from compute_optimal_primers_pairs() from target.py)</li>
+<li><strong>range_left</strong> &#8211; get from compute_optimal_primers_pairs() from target.py</li>
+<li><strong>penalty</strong> &#8211; describes how much differ the characteristic of this primer upon optimal characteristics.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>TFGP</strong> &#8211; the last position of the primer if left                or the first position of the primer if right.</li>
+<li><strong>primer_hybridization_sites</strong> &#8211; a dic with chromosome number as key and a list of hybridisation sites as value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="primer.Primer.check_snp_in_primer">
+<code class="descname">check_snp_in_primer</code><span class="sig-paren">(</span><em>snp_in_target</em><span class="sig-paren">)</span><a class="headerlink" href="#primer.Primer.check_snp_in_primer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a snp is in the primer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>snp_in_target</strong> &#8211; list containing all snp of the target                              get by get_snp() from target.py</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li>-1 if a snp is in the primer sequence</li>
+<li>0 otherwise</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="primer.Primer.compute_thermofisher_good_pos">
+<code class="descname">compute_thermofisher_good_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#primer.Primer.compute_thermofisher_good_pos" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the last position of the left primer or the first position of the right one</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="primer.Primer.dinucleotides_repeats">
+<code class="descname">dinucleotides_repeats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#primer.Primer.dinucleotides_repeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is 5 or more consecutive dinucleotides repeats in the primer sequence.
+No more than 4 consecutive repeats.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li>True if the sequence containing such repeats</li>
+<li>False otherwise</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="primer.Primer.reverse_complement">
+<code class="descname">reverse_complement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#primer.Primer.reverse_complement" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">reverse complement of the primer sequence</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-primersPair">
+<span id="primerspair-py"></span><h1>primersPair.py<a class="headerlink" href="#module-primersPair" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="primersPair.PrimersPair">
+<em class="property">class </em><code class="descclassname">primersPair.</code><code class="descname">PrimersPair</code><span class="sig-paren">(</span><em>left_primer</em>, <em>right_primer</em><span class="sig-paren">)</span><a class="headerlink" href="#primersPair.PrimersPair" title="Permalink to this definition">¶</a></dt>
+<dd><p>PrimersPair is an object that allow to link a left primer and a right primer that amplify a region
+(containing a region)</p>
+<p>Two primers pairs are said equal if their left primers and right primers are equal respectively</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>left_primer</strong> &#8211; the left primer instance</li>
+<li><strong>right_primer</strong> &#8211; the right primer instance</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-blast">
+<span id="blast-py"></span><h1>blast.py<a class="headerlink" href="#module-blast" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="blast.Blast">
+<em class="property">class </em><code class="descclassname">blast.</code><code class="descname">Blast</code><span class="sig-paren">(</span><em>list_primers_pairs</em><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that computes for each primers pairs of a target possible hybridisation sites of a primer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>list_primers_pairs</strong> &#8211; a list containing primersPair instance.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="blast.Blast.add_hybridization_sites">
+<code class="descname">add_hybridization_sites</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.add_hybridization_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function that adding hybridisation site to primer object with python dic.</p>
+<ol class="arabic simple">
+<li>Gets all unique left and right primers of primers pair list of a target.</li>
+<li>Execute blast (via get_blast_output()) for each unique left primers and right primers           remove any primers that hybridise other regions elsewhere in the genome.</li>
+<li>Parse again the list of all primers pairs of the target and assign the hybridisation site of           left and right primer to the sames ones (a lot of doublon in primers pairs list).           So a lot of blast queries are avoid using this method.</li>
+<li>search possible hybridisation site elsewhere in the genome for each primers pairs.           if one, remove the primers pair.</li>
+</ol>
+<p>NO check for hybridisation with others primers_pair, no multiplex_machines</p>
+<p>Blast give possible always in 5&#8217; -&gt; 3&#8217; (direction of the elongation)
+There are 4 cases of possible hybridisation:</p>
+<ul class="simple">
+<li>L-R: first value &lt; second value for the left; first value &gt; second value for the right</li>
+<li>R-L: first value &lt; second value for the right; first value &gt; second value for the left</li>
+<li>L-L: first value &lt; second value for left; first value &gt; second value for the left</li>
+<li>R-R: first value &lt; second value for right; first value &gt; second value for the right</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nothing but update all_primers_pairs that contained all primers pairs that not have hybridisation                 elsewhere in the genome.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blast.Blast.elongation_direction">
+<code class="descname">elongation_direction</code><span class="sig-paren">(</span><em>pos1</em>, <em>pos2</em><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.elongation_direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the elongation direction of a primer defined by pos1 and pos2 (extremity positions)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pos1</strong> &#8211; the first position given by BLAST</li>
+<li><strong>pos2</strong> &#8211; the second position given by BLAST</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>1 if the elongation is performed left to right</li>
+<li>0 if the elongation is performed right to left</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blast.Blast.get_unique_primers">
+<code class="descname">get_unique_primers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.get_unique_primers" title="Permalink to this definition">¶</a></dt>
+<dd><p>output: list containing all left primers_pair and list containing all right primers_pair. No doublon accepted.
+[[primer_sequence, primer_position],...]
+Be careful, the primer_position is the last position of the left primer or the first position of the right one.
+Parse each pair of accepted primers_pair and add the left primer and the right primer in different list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a tuple containing a list of all unique left primers and all unique right primers.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blast.Blast.is_primers_compatible">
+<code class="descname">is_primers_compatible</code><span class="sig-paren">(</span><em>blast_result1</em>, <em>blast_result2</em><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.is_primers_compatible" title="Permalink to this definition">¶</a></dt>
+<dd><p>First checks the direction of elongation. If one primer is in the &#8216;plus&#8217; strand and the other in the &#8216;minus&#8217; strand
+Then check if the distance is smaller than 1000 pb.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>blast_result1</strong> &#8211; &#8216;content&#8217; list for first primer</li>
+<li><strong>blast_result2</strong> &#8211; &#8216;content&#8217; list for the second primer</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>True if hybridization</li>
+<li>False otherwise</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blast.Blast.parse_blast_output">
+<code class="descname">parse_blast_output</code><span class="sig-paren">(</span><em>primer</em><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.parse_blast_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>run and parse the result and create a dic with chromosome number as key and list of &#8216;content&#8217;
+as value content = [BLAST_pos1, BLAST_pos2, elongation_direction]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>primer</strong> &#8211; the primer that we want to blast his sequence.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but have a side effect on primer hybridisation attribute.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blast.Blast.run_blast">
+<code class="descname">run_blast</code><span class="sig-paren">(</span><em>primer</em><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.run_blast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blast the primer against human genome (fasta file hg19 as reference). Creates the output file &#8216;outputBlast.txt        fields of the output format: query acc., subject acc., identity pourcentage, alignment length, mismatches,        gap opens, q. start, q. end, s. start, s. end, e-value, bit score        blast-short type command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>primer</strong> &#8211; primer to BLAST (Primer instance)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but ** create the file outputBlast.txt ** containing all results from BLAST.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blast.Blast.search_hybridization_site_rr_ll">
+<code class="descname">search_hybridization_site_rr_ll</code><span class="sig-paren">(</span><em>primer</em><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.search_hybridization_site_rr_ll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search RR or LL hybridisation for one primer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>primer</strong> &#8211; Primer instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li>True if hybridisation</li>
+<li>False otherwise</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blast.Blast.search_hybridization_sites_lr_rl">
+<code class="descname">search_hybridization_sites_lr_rl</code><span class="sig-paren">(</span><em>d_left</em>, <em>d_right</em><span class="sig-paren">)</span><a class="headerlink" href="#blast.Blast.search_hybridization_sites_lr_rl" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>d_left</strong> &#8211; the dic of hybridisation sites of left primer.</li>
+<li><strong>d_right</strong> &#8211; the dic of hybridisation sites of right primer.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>False if no hybridisation elsewhere in the genome (check OK)</li>
+<li>True otherwise (hybridisation check no ok)</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fileCreation">
+<span id="filecreation-py"></span><h1>fileCreation.py<a class="headerlink" href="#module-fileCreation" title="Permalink to this headline">¶</a></h1>
+<p>File allowing to create all kind of useful files like saving targets&#8217;s primers pair in bed file or
+save target object into file for example.</p>
+<dl class="function">
+<dt id="fileCreation.create_bed_file">
+<code class="descclassname">fileCreation.</code><code class="descname">create_bed_file</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#fileCreation.create_bed_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a bed file containing chromosomal range based on the first primers pair of each target.
+chromosomal range: last position of the left primer and first position of the right</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> &#8211; a list containing target objects.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but create chrom.bed a file containing such chromosomal range</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fileCreation.create_bed_file_chromosome">
+<code class="descclassname">fileCreation.</code><code class="descname">create_bed_file_chromosome</code><span class="sig-paren">(</span><em>chromosome</em><span class="sig-paren">)</span><a class="headerlink" href="#fileCreation.create_bed_file_chromosome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a bed file with a list a primers pairs.
+Originally created for the multiplex_machines algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chromosome</strong> &#8211; a list containing primers pair object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but create a file chrom.bed containing chromosomic range according to primers pairs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fileCreation.create_fasta_file">
+<code class="descclassname">fileCreation.</code><code class="descname">create_fasta_file</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#fileCreation.create_fasta_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a fasta file containing all sequences of targets</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> &#8211; a list containing target objects.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but creates a file sequences.fasta containing all targets&#8217;s sequences.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fileCreation.create_fasta_file_primer">
+<code class="descclassname">fileCreation.</code><code class="descname">create_fasta_file_primer</code><span class="sig-paren">(</span><em>primer_seq</em><span class="sig-paren">)</span><a class="headerlink" href="#fileCreation.create_fasta_file_primer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates fasta file containing a sequence of primer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>primer_seq</strong> &#8211; a primer sequence</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but create primers.fasta containing the sequence of the primer passed in parameter.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fileCreation.load_targets_from_file">
+<code class="descclassname">fileCreation.</code><code class="descname">load_targets_from_file</code><span class="sig-paren">(</span><em>numberOfTargets</em><span class="sig-paren">)</span><a class="headerlink" href="#fileCreation.load_targets_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads targets from the file targets_datas.pkl</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>numberOfTargets</strong> &#8211; the number of targets stores in the file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a list of the target objects that have been saved previously</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fileCreation.save_targets_into_file">
+<code class="descclassname">fileCreation.</code><code class="descname">save_targets_into_file</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#fileCreation.save_targets_into_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves targets into files. Important for not generating again primers pairs of targets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> &#8211; a list containing target object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but create targets_datas.pkl containing target objects (serialisation)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-postTreatments">
+<span id="posttreatments-py"></span><h1>postTreatments.py<a class="headerlink" href="#module-postTreatments" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="postTreatments.PostTreatments">
+<em class="property">class </em><code class="descclassname">postTreatments.</code><code class="descname">PostTreatments</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#postTreatments.PostTreatments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that make post treatments i.e checking and merge overlapping best primers pairs of 2 distinct targets,    the multiplex_machines algorithm...
+All operations that we can do when all targets have been generated.</p>
+<p><strong>We suppose that the best primers pair for each target is the first in the list</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> &#8211; a list containing target instance (when all_primers_pairs has been computed)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Variables:</th><td class="field-body"><strong>l_targets</strong> &#8211; a list of Target</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="postTreatments.PostTreatments.check_overlap">
+<code class="descname">check_overlap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postTreatments.PostTreatments.check_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>When two targets are overlapping each other i.e if his first primers pair are overlapping
+then merge these primers pairs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list containing the first primers pair of each target, no overlap.        so one primers pair car refer to one or more targets.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="postTreatments.PostTreatments.is_overlapping">
+<code class="descname">is_overlapping</code><span class="sig-paren">(</span><em>primers_pair1</em>, <em>primers_pair2</em><span class="sig-paren">)</span><a class="headerlink" href="#postTreatments.PostTreatments.is_overlapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks if two primers pairs are overlapping.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primers_pair1</strong> &#8211; a primer pair object</li>
+<li><strong>primers_pair2</strong> &#8211; a primer pair object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>True if the two primers pairs are overlapping</li>
+<li>False otherwise</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="postTreatments.PostTreatments.merge_primerspairs">
+<code class="descname">merge_primerspairs</code><span class="sig-paren">(</span><em>primers_pair1</em>, <em>primers_pair2</em><span class="sig-paren">)</span><a class="headerlink" href="#postTreatments.PostTreatments.merge_primerspairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges two primers pairs when they overlap.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primers_pair1</strong> &#8211; a primers pair object</li>
+<li><strong>primers_pair2</strong> &#8211; a primers pair object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a new primer pairs object resulting of the addition of the two primers pairs.        i.e the left primer of the first and the right primer of the second.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="postTreatments.PostTreatments.run_multiplex">
+<code class="descname">run_multiplex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postTreatments.PostTreatments.run_multiplex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the multiplex_machines algorithm
+Be careful this algorithm are not really optimized and delete too many targets !</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a chromosome of optimized primers_pair</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="postTreatments.PostTreatments.run_pseudo_multiplex">
+<code class="descname">run_pseudo_multiplex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postTreatments.PostTreatments.run_pseudo_multiplex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the pseudo multiplex_machines algorithm
+Be careful this algorithm are not really optimized and delete too many targets !</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a chromosome of optimized primers_pair</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">main.py</a></li>
+<li><a class="reference internal" href="#module-parsing">parsing.py</a></li>
+<li><a class="reference internal" href="#module-target">target.py</a></li>
+<li><a class="reference internal" href="#module-primer">primer.py</a></li>
+<li><a class="reference internal" href="#module-primersPair">primersPair.py</a></li>
+<li><a class="reference internal" href="#module-blast">blast.py</a></li>
+<li><a class="reference internal" href="#module-fileCreation">fileCreation.py</a></li>
+<li><a class="reference internal" href="#module-postTreatments">postTreatments.py</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to primers design&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="multiplex_machines.html"
+                        title="next chapter">pseudoMultiplex.py</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/code.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="multiplex_machines.html" title="pseudoMultiplex.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to primers design’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Nicolas Potie for ONCODNA.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

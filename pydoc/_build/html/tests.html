@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>test_parser.py &#8212; primers design 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="primers design 1 documentation" href="index.html" />
+    <link rel="prev" title="pseudoMultiplex.py" href="multiplex_machines.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="multiplex_machines.html" title="pseudoMultiplex.py"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-test_parser">
+<span id="test-parser-py"></span><h1>test_parser.py<a class="headerlink" href="#module-test_parser" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="test_parser.TestParser">
+<em class="property">class </em><code class="descclassname">test_parser.</code><code class="descname">TestParser</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_parser.TestParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests the csv parser</p>
+<dl class="method">
+<dt id="test_parser.TestParser.test_get_data_from_csv_damaging">
+<code class="descname">test_get_data_from_csv_damaging</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_parser.TestParser.test_get_data_from_csv_damaging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if a target with a damaging variant is correctly initialise</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_parser.TestParser.test_get_data_from_csv_polymorphism">
+<code class="descname">test_get_data_from_csv_polymorphism</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_parser.TestParser.test_get_data_from_csv_polymorphism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if a target with a probably polymorphism variant is correctly initialise</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_parser.TestParser.test_get_data_from_csv_unknown">
+<code class="descname">test_get_data_from_csv_unknown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_parser.TestParser.test_get_data_from_csv_unknown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if a target with a unknown variant is correctly initialise</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-test_target">
+<span id="test-target-py"></span><h1>test_target.py<a class="headerlink" href="#module-test_target" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="test_target.TestTarget">
+<em class="property">class </em><code class="descclassname">test_target.</code><code class="descname">TestTarget</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests the class Target especially creation of primers by primer3 algorithm
+the compute_list_primers_pairs function has not been tested because it&#8217;s a wrapper of good tested functions.</p>
+<dl class="method">
+<dt id="test_target.TestTarget.primers_caract">
+<code class="descname">primers_caract</code><span class="sig-paren">(</span><em>primers_pair</em>, <em>variant_position</em><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget.primers_caract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests main characteristics of primers pair.
+:param primers_pair: a primer pair (not the primersPair instance) as primer3 output.
+:param variant_position: the relative position of the variant</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_target.TestTarget.test_compute_optimal_raw_primers_pairs">
+<code class="descname">test_compute_optimal_raw_primers_pairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget.test_compute_optimal_raw_primers_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for all primers pair generated that the primers pairs respect constraints</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_target.TestTarget.test_design_primers">
+<code class="descname">test_design_primers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget.test_design_primers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if designed primers pair are compatible with constraints</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_target.TestTarget.test_get_target_sequence">
+<code class="descname">test_get_target_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget.test_get_target_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the correct target sequence is grabbed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_target.TestTarget.test_remove_primers_pair_with_hybridisation">
+<code class="descname">test_remove_primers_pair_with_hybridisation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget.test_remove_primers_pair_with_hybridisation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the function remove all primers_pair with any hybridisation sites.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_target.TestTarget.test_sort_by_penalty">
+<code class="descname">test_sort_by_penalty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget.test_sort_by_penalty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if primers pairs instance have been correctly sorted by penalty.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_target.TestTarget.test_sort_by_tfgr">
+<code class="descname">test_sort_by_tfgr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_target.TestTarget.test_sort_by_tfgr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if primers pairs instance have been correctly sorted by TFGR.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-test_primer">
+<span id="test-primer-py"></span><h1>test_primer.py<a class="headerlink" href="#module-test_primer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="test_primer.TestPrimer">
+<em class="property">class </em><code class="descclassname">test_primer.</code><code class="descname">TestPrimer</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_primer.TestPrimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests the Primer class</p>
+<dl class="method">
+<dt id="test_primer.TestPrimer.test_TFGR">
+<code class="descname">test_TFGR</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_primer.TestPrimer.test_TFGR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the TFGP is correctly computed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_primer.TestPrimer.test_check_snp_in_primer">
+<code class="descname">test_check_snp_in_primer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_primer.TestPrimer.test_check_snp_in_primer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests snp and no snp in primer sequence</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_primer.TestPrimer.test_dinucleotides_repeats">
+<code class="descname">test_dinucleotides_repeats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_primer.TestPrimer.test_dinucleotides_repeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the function detects di-nucleotides repeats</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_primer.TestPrimer.test_eq">
+<code class="descname">test_eq</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_primer.TestPrimer.test_eq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests equality and inequality between two primers</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-test_primersPair">
+<span id="test-primerspair-py"></span><h1>test_primersPair.py<a class="headerlink" href="#module-test_primersPair" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="test_primersPair.TestPrimersPair">
+<em class="property">class </em><code class="descclassname">test_primersPair.</code><code class="descname">TestPrimersPair</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_primersPair.TestPrimersPair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the primersPair instance is correctly created</p>
+<dl class="method">
+<dt id="test_primersPair.TestPrimersPair.create_primers_pair">
+<code class="descname">create_primers_pair</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#test_primersPair.TestPrimersPair.create_primers_pair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a primers_pair from a target instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>target</strong> &#8211; target instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a primers_pair instance (in target sequence)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-test_blast">
+<span id="test-blast-py"></span><h1>test_blast.py<a class="headerlink" href="#module-test_blast" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="test_blast.TestBlast">
+<em class="property">class </em><code class="descclassname">test_blast.</code><code class="descname">TestBlast</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_blast.TestBlast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests the BLAST class</p>
+<dl class="method">
+<dt id="test_blast.TestBlast.add_hybridization_sites">
+<code class="descname">add_hybridization_sites</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_blast.TestBlast.add_hybridization_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests succinctly the main function of BLAST class</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_blast.TestBlast.test_get_unique_primers">
+<code class="descname">test_get_unique_primers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_blast.TestBlast.test_get_unique_primers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the function get correctly each unique primers and        each primer has not been forgotten.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_blast.TestBlast.test_run_blast">
+<code class="descname">test_run_blast</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_blast.TestBlast.test_run_blast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if blast hits are correct respect to our constraint.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_blast.TestBlast.test_search_hybridization_site_rr_ll">
+<code class="descname">test_search_hybridization_site_rr_ll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_blast.TestBlast.test_search_hybridization_site_rr_ll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the function detects well rr or ll hybridisation
+Tests the function is_primers_compatible as well.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_blast.TestBlast.test_search_hybridization_sites_lr_rl">
+<code class="descname">test_search_hybridization_sites_lr_rl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_blast.TestBlast.test_search_hybridization_sites_lr_rl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the function detects well lr or rl hybridisation</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-test_postTreatments">
+<span id="test-posttreatments-py"></span><h1>test_postTreatments.py<a class="headerlink" href="#module-test_postTreatments" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="test_postTreatments.TestPostTreatment">
+<em class="property">class </em><code class="descclassname">test_postTreatments.</code><code class="descname">TestPostTreatment</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_postTreatments.TestPostTreatment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests post treatments of targets except multiplex_machines and pseudo multiplex_machines    . tests with data1_10.csv</p>
+<p><strong>Huge disclaimer: tests will work with data1_10 AND BLAST = True(enable), overlap=False AND sort_by_tfgr = True</strong></p>
+<dl class="method">
+<dt id="test_postTreatments.TestPostTreatment.create_targets">
+<code class="descname">create_targets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_postTreatments.TestPostTreatment.create_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and save targets for not re-execute the whole creation of primers pair
+execute only one time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_postTreatments.TestPostTreatment.test_check_overlap">
+<code class="descname">test_check_overlap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_postTreatments.TestPostTreatment.test_check_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the overlapping is doing well</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_postTreatments.TestPostTreatment.test_is_overlapping">
+<code class="descname">test_is_overlapping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_postTreatments.TestPostTreatment.test_is_overlapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if two primers_pair are overlapping each other.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_postTreatments.TestPostTreatment.test_is_overlapping_merged">
+<code class="descname">test_is_overlapping_merged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_postTreatments.TestPostTreatment.test_is_overlapping_merged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if two primers_pair are overlapping each other with one merged</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test_postTreatments.TestPostTreatment.test_merge_primerspairs">
+<code class="descname">test_merge_primerspairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_postTreatments.TestPostTreatment.test_merge_primerspairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if the merge of two primers pair are correct.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">test_parser.py</a></li>
+<li><a class="reference internal" href="#module-test_target">test_target.py</a></li>
+<li><a class="reference internal" href="#module-test_primer">test_primer.py</a></li>
+<li><a class="reference internal" href="#module-test_primersPair">test_primersPair.py</a></li>
+<li><a class="reference internal" href="#module-test_blast">test_blast.py</a></li>
+<li><a class="reference internal" href="#module-test_postTreatments">test_postTreatments.py</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="multiplex_machines.html"
+                        title="previous chapter">pseudoMultiplex.py</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tests.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="multiplex_machines.html" title="pseudoMultiplex.py"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Nicolas Potie for ONCODNA.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

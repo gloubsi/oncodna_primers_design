@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pseudoMultiplex.py &#8212; primers design 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="primers design 1 documentation" href="index.html" />
+    <link rel="next" title="test_parser.py" href="tests.html" />
+    <link rel="prev" title="main.py" href="code.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tests.html" title="test_parser.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="main.py"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pseudoMultiplex">
+<span id="pseudomultiplex-py"></span><h1>pseudoMultiplex.py<a class="headerlink" href="#module-pseudoMultiplex" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pseudoMultiplex.PseudoMultiplex">
+<em class="property">class </em><code class="descclassname">pseudoMultiplex.</code><code class="descname">PseudoMultiplex</code><span class="sig-paren">(</span><em>number_of_targets</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a simple pseudo multiplex_machines who use targets saved in file (serialised) to not re-execute target.py script.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>number_of_targets</strong> &#8211; the number of target saved in the file (important for dill.load)</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.check_primers_pairs">
+<code class="descname">check_primers_pairs</code><span class="sig-paren">(</span><em>primers_pair1</em>, <em>primers_pair2</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.check_primers_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the new primers pairs is OK according to conditions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primers_pair1</strong> &#8211; a primersPair instance</li>
+<li><strong>primers_pair2</strong> &#8211; a primersPair instance</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>True if the new primers pairs are compatible with the constraints</li>
+<li>False otherwise</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.compute_matches_between_primers">
+<code class="descname">compute_matches_between_primers</code><span class="sig-paren">(</span><em>primer1</em>, <em>primer2</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.compute_matches_between_primers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes alignment between two primers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primer1</strong> &#8211; a Primer instance</li>
+<li><strong>primer2</strong> &#8211; a Primer instance</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the number of matches between the two primers</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.compute_score">
+<code class="descname">compute_score</code><span class="sig-paren">(</span><em>primers_pair1</em>, <em>primers_pair2</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.compute_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the score of alignment of two primers (detection of dimers) and computes hybridization sites (true if it is, false otherwise)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primers_pair1</strong> &#8211; a primersPair instance</li>
+<li><strong>primers_pair2</strong> &#8211; a primersPair instance</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>score_dim: a list containing the match scores (resulting of compute_matches_between_primers())                 for each possibility (4) for the two primers pairs. Score dimers</li>
+<li>check_amplification: a list containing boolean value resulting of search_hybridisation_sites function                 for each possibility between two primers pairs</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.create_chromosome">
+<code class="descname">create_chromosome</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.create_chromosome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a chromosome with amplicon of the minimum size (TFGR minimum)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">unique chromosome [primersPair0, primersPair1,...]        with primersPair having the lowest TFGR range for each target</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.is_overlapping">
+<code class="descname">is_overlapping</code><span class="sig-paren">(</span><em>primers_pair1</em>, <em>primers_pair2</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.is_overlapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks if two primers pairs are overlapping.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primers_pair1</strong> &#8211; a primer pair object</li>
+<li><strong>primers_pair2</strong> &#8211; a primer pair object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>True if the two primers pairs are overlapping</li>
+<li>False otherwise</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.merge_primerspairs">
+<code class="descname">merge_primerspairs</code><span class="sig-paren">(</span><em>primers_pair1</em>, <em>primers_pair2</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.merge_primerspairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges two primers pairs when they overlap.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primers_pair1</strong> &#8211; a primers pair object</li>
+<li><strong>primers_pair2</strong> &#8211; a primers pair object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a new primer pairs object resulting of the addition of the two primers pairs.        i.e the left primer of the first and the right primer of the second.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>run the multiplex_machines</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a chromosome with an optimize solution.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.search_hybridisation_sites">
+<code class="descname">search_hybridisation_sites</code><span class="sig-paren">(</span><em>primer1</em>, <em>primer2</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.search_hybridisation_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches hybridization sites between two primers
+used by compute_score function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primer1</strong> &#8211; a Primer instance</li>
+<li><strong>primer2</strong> &#8211; a Primer instance</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>True if there is hybridisation between two primers</li>
+<li>False otherwise</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pseudoMultiplex.PseudoMultiplex.sort_targets_by_bioimp">
+<code class="descname">sort_targets_by_bioimp</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#pseudoMultiplex.PseudoMultiplex.sort_targets_by_bioimp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts targets by biological implication</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> &#8211; a list containing Target instances</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of target sorted by important biological implication first.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-multiplex">
+<span id="multiplex-py"></span><h1>multiplex.py<a class="headerlink" href="#module-multiplex" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="multiplex.MultiplexMachine">
+<em class="property">class </em><code class="descclassname">multiplex.</code><code class="descname">MultiplexMachine</code><span class="sig-paren">(</span><em>number_of_targets</em><span class="sig-paren">)</span><a class="headerlink" href="#multiplex.MultiplexMachine" title="Permalink to this definition">¶</a></dt>
+<dd><p>multiplex_machines machine using genetic algorithm.
+!!! side effect on targets list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>number_of_targets</strong> &#8211; the number of target saved in the file (important for dill.load)</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="multiplex.MultiplexMachine.best_chromosome_simple_plex">
+<code class="descname">best_chromosome_simple_plex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#multiplex.MultiplexMachine.best_chromosome_simple_plex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">chromosome containing primers pairs closest to the variant in each target</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multiplex.MultiplexMachine.create_chromosome">
+<code class="descname">create_chromosome</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#multiplex.MultiplexMachine.create_chromosome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates one chromosome object with random primers pairs as components</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a chromosome containing primers pairs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multiplex.MultiplexMachine.create_initial_pop">
+<code class="descname">create_initial_pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#multiplex.MultiplexMachine.create_initial_pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates chromosomes into population for the multiplex_machines genetic algorithm.
+A chromosome is composed of targets (sequences) T that is (G, Pf, Pr, var_key).
+The melting temperature of primers for the same target are roughly the same (done by primer3).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">chromosome containing (G, Pf, Pr): G is the pool number (always 1 is this case),        Pf the number of left primers, Pr the number of right primers</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multiplex.MultiplexMachine.perform_mutation">
+<code class="descname">perform_mutation</code><span class="sig-paren">(</span><em>chromosome</em><span class="sig-paren">)</span><a class="headerlink" href="#multiplex.MultiplexMachine.perform_mutation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a mutation. Pick a random target, pick a random primer pair of the given target.
+The new primers pair picked will replaced the primers pair in place</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chromosome</strong> &#8211; a chromosome object instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the chromosome with the random mutation applied</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multiplex.MultiplexMachine.roulette_wheel_selection">
+<code class="descname">roulette_wheel_selection</code><span class="sig-paren">(</span><em>population</em><span class="sig-paren">)</span><a class="headerlink" href="#multiplex.MultiplexMachine.roulette_wheel_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects two chromosomes by the roulette wheel selection method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>population</strong> &#8211; a list containing all chromosomes instances of the population.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">two chromosomes selected by roulette wheel selection method</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multiplex.MultiplexMachine.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#multiplex.MultiplexMachine.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the multiplex_machines algorithm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a chromosome object whose components are optimised with our constraints (best fitness value)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-chromosome">
+<span id="chromosome-py"></span><h1>chromosome.py<a class="headerlink" href="#module-chromosome" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="chromosome.Chromosome">
+<em class="property">class </em><code class="descclassname">chromosome.</code><code class="descname">Chromosome</code><span class="sig-paren">(</span><em>components_list</em><span class="sig-paren">)</span><a class="headerlink" href="#chromosome.Chromosome" title="Permalink to this definition">¶</a></dt>
+<dd><p>A chromosome is one &#8216;entity&#8217; of the population of the genetic algorithm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>components_list</strong> &#8211; a list containing primersPair instance (size equal to the number of targets)</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="chromosome.Chromosome.compute_chromosome_fitness">
+<code class="descname">compute_chromosome_fitness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chromosome.Chromosome.compute_chromosome_fitness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the fitness of the whole chromosome.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a fitness, wich is a float value        corresponding to the addition of the fitness all two primers pairs of the components list.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="chromosome.Chromosome.compute_fitness_between_primers">
+<code class="descname">compute_fitness_between_primers</code><span class="sig-paren">(</span><em>primer1</em>, <em>primer2</em><span class="sig-paren">)</span><a class="headerlink" href="#chromosome.Chromosome.compute_fitness_between_primers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes alignment between two primers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primer1</strong> &#8211; a Primer instance</li>
+<li><strong>primer2</strong> &#8211; a Primer instance</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the number of mismatched - matches</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="chromosome.Chromosome.cross_over">
+<code class="descname">cross_over</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#chromosome.Chromosome.cross_over" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a crossing-over between two chromosomes: self and other.
+if the cutting point &lt; 12 (half of length), exchange components from the front end part of the two chromosomes
+if cutting point &gt; 12, exchange components from the rear end part of the two chromosomes
+So if cutting point = 2, exchange the first 2 components. If cutting point = 22, exchange the three last components.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> &#8211; a other instance of chromosome object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing but performs the cross-over</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="chromosome.Chromosome.mutate">
+<code class="descname">mutate</code><span class="sig-paren">(</span><em>no_target</em>, <em>new_primers_pair</em><span class="sig-paren">)</span><a class="headerlink" href="#chromosome.Chromosome.mutate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutate the chromosome, change the primer pair of the noTarget by the new primers pair.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>no_target</strong> &#8211; the target number</li>
+<li><strong>new_primers_pair</strong> &#8211; the new instance of primersPair at the index no_target</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">nothing but have a side effect on components at index no_target.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="chromosome.Chromosome.update_fitness">
+<code class="descname">update_fitness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chromosome.Chromosome.update_fitness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the fitness of a chromosome</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nothing by have a side effect on fitness of the chromosome</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pseudoMultiplex.py</a></li>
+<li><a class="reference internal" href="#module-multiplex">multiplex.py</a></li>
+<li><a class="reference internal" href="#module-chromosome">chromosome.py</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">main.py</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tests.html"
+                        title="next chapter">test_parser.py</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/multiplex_machines.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tests.html" title="test_parser.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="main.py"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Nicolas Potie for ONCODNA.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

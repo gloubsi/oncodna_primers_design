@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to primers design’s documentation! &#8212; primers design 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="primers design 1 documentation" href="#" />
+    <link rel="next" title="main.py" href="code.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="main.py"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-primers-design-s-documentation">
+<h1>Welcome to primers design&#8217;s documentation!<a class="headerlink" href="#welcome-to-primers-design-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Program that computes for each variant an optimize pair of primers.
+The motivation is to submit to Ampliseq program(<a class="reference external" href="https://ampliseq.com/browse.action">https://ampliseq.com/browse.action</a>) all good chromosomic range to have a minimum of errors at the end and then buy oligos nucleotides predicted. So we have to predict the result of Ampliseq program and design our own primers pairs using a PCR in-silico.
+It creates a bed file containing all chromosomic ranges. For each range, a primers pair has been designed.</p>
+<p>Requirements:</p>
+<ul class="simple">
+<li>Python 3.5 distribution</li>
+<li>primer3-py 0.5.1: <a class="reference external" href="https://pypi.python.org/pypi/primer3-py">https://pypi.python.org/pypi/primer3-py</a></li>
+<li>pysam 0.9.1.4: <a class="reference external" href="https://pypi.python.org/pypi/pysam">https://pypi.python.org/pypi/pysam</a></li>
+<li>myvariant 0.3.1: <a class="reference external" href="https://pypi.python.org/pypi/myvariant/0.3.1">https://pypi.python.org/pypi/myvariant/0.3.1</a></li>
+<li>dill 0.2.5(for serialisation): <a class="reference external" href="https://pypi.python.org/pypi/dill">https://pypi.python.org/pypi/dill</a></li>
+<li>Blast+ 2.5.0: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK52640/">https://www.ncbi.nlm.nih.gov/books/NBK52640/</a></li>
+</ul>
+</div>
+<div class="section" id="launching">
+<h1>Launching<a class="headerlink" href="#launching" title="Permalink to this headline">¶</a></h1>
+<p>Run the program is pretty simple. Go in the folder &#8216;code&#8217; wich contains all source code such as main.py
+Then execute this command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>$ python3 main.py path_of_data_file
+</pre></div>
+</div>
+</div>
+<div class="section" id="code-documentation">
+<h1>Code documentation<a class="headerlink" href="#code-documentation" title="Permalink to this headline">¶</a></h1>
+<p>The project contains all of the files below. Note that each parameter can be setted in config.py</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code.html">main.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html#module-parsing">parsing.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html#module-target">target.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html#module-primer">primer.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html#module-primersPair">primersPair.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html#module-blast">blast.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html#module-fileCreation">fileCreation.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html#module-postTreatments">postTreatments.py</a></li>
+</ul>
+</div>
+<p>Two multiplex algorithms have been implemented, run without error but <strong>are not optimized</strong> due to output likely to fail in Ampliseq design or remove too many variants.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="multiplex_machines.html">pseudoMultiplex.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiplex_machines.html#module-multiplex">multiplex.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiplex_machines.html#module-chromosome">chromosome.py</a></li>
+</ul>
+</div>
+<p>Several unit tests have been implemented:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">test_parser.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html#module-test_target">test_target.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html#module-test_primer">test_primer.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html#module-test_primersPair">test_primersPair.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html#module-test_blast">test_blast.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html#module-test_postTreatments">test_postTreatments.py</a></li>
+</ul>
+</div>
+<img alt="_images/class_diagram2.png" src="_images/class_diagram2.png" />
+</div>
+<div class="section" id="global-information">
+<h1>Global information<a class="headerlink" href="#global-information" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-motivation">
+<h2>Project motivation<a class="headerlink" href="#project-motivation" title="Permalink to this headline">¶</a></h2>
+<p>The company needs to sequence known variants from blood sample of a patient. To do this, for each variant, a pair of primers has to be design to amplify the variant and then see if:</p>
+<ul class="simple">
+<li>the variant is the same as the ucsc genome template.</li>
+<li>the variant is different and has an implication in the cancer.</li>
+</ul>
+<p>the proportion of these two is computed. The same technique is done months after to see if the proportion have changed with chimiotherapic treatment.</p>
+<p>Technically, blood samples are placed in a PCR machine with other components like primers. The latter are ordered from ThermoFisher company (<a class="reference external" href="https://www.thermofisher.com/be/en/home.html">https://www.thermofisher.com/be/en/home.html</a>) and the Ampliseq design program(<a class="reference external" href="https://ampliseq.com/browse.action">https://ampliseq.com/browse.action</a>) is used to order oligonucleotides.</p>
+<p>In Ampliseq program, chromosomic range containing the variant are upload and submit. An hour later, the program will design primers pairs for each target (for each chromosomic range). However some ranges will fail and our employee have to change failed chromosomic range and then re-submit. This is time consuming. <strong>The goal is to predict good chromosomic range that the program Ampliseq won&#8217;t fail.</strong> But what Ampliseq program does ? That&#8217;s the main challenge.</p>
+</div>
+<div class="section" id="state-of-work">
+<h2>State of work<a class="headerlink" href="#state-of-work" title="Permalink to this headline">¶</a></h2>
+<p>By now, the program creates correctly good chromosomic range but <strong>some errors in Ampliseq program can appear</strong> due to unknown reason(s) (bad combinaison of parameters? Multiplex? Unknown constraint(s)?). <strong>The program compute only chromosomic range for cfDNA. Other size in ThermoFisher use others constraints</strong></p>
+<p>By simulation, sort by penalties give bad results. Do sort_by_tfgr instead.</p>
+<p>Here is a typical output of the program (realised with blast):</p>
+<a class="reference external image-reference" href="blast.png"><img alt="_images/blast.png" src="_images/blast.png" /></a>
+<p>The execution time with BLAST (and without running multiplex algorithms) can be optimized such that the program will add hybridisation sites for each primers pair of each target. If we don&#8217;t running a multiplex, we don&#8217;t need to have hybridisation sites unless for wich we take i.e the first primers pair of the list after sorting. So BLAST could be just performs in the first primers pair instead of all.</p>
+<p>Result using with BLAST disabled:</p>
+<a class="reference external image-reference" href="noblast.png"><img alt="_images/noblast.png" src="_images/noblast.png" /></a>
+<p>The program create a bed file &#8220;chrom.bed&#8221; (in the picture, just first 12 targets have been pictured):</p>
+<a class="reference external image-reference" href="bed_file.png"><img alt="_images/bed_file.png" src="_images/bed_file.png" /></a>
+<p><strong>mutation position display only one position in the range but it could have more than one position in the target. An amelioration is to list all mutations positions. One way to do it is to create an object regrouping two or more target that have been merged</strong></p>
+<p>And the result of ThermoFisher (with BLAST disabled):</p>
+<a class="reference external image-reference" href="resT.png"><img alt="_images/resT.png" src="_images/resT.png" /></a>
+<a class="reference external image-reference" href="resT2.png"><img alt="_images/resT2.png" src="_images/resT2.png" /></a>
+<a class="reference external image-reference" href="resT3.png"><img alt="_images/resT3.png" src="_images/resT3.png" /></a>
+<p>As you can see, 2 errors remaining for cfDNA and we couldn&#8217;t find any reason to it by the end of internship.
+<strong>The 21 targets include all variants. Multiple variants could be include in one target due to overlapping primers pairs.</strong></p>
+</div>
+<div class="section" id="parameters-used">
+<h2>Parameters used<a class="headerlink" href="#parameters-used" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Parameters that used this program is really important and influence the result. See below parameters chosen:</dt>
+<dd><ul class="first simple">
+<li>Primer3 parameters:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Size of primers: 18 - 25 pb (optimal: 20)</li>
+<li>Melting temperature: 57 - 63 (optimal: 60)</li>
+<li>Percentage of GC: 30 - 70</li>
+<li>PCR product size: 51 - 140 pb</li>
+<li>4 repetitions maximum of mono-nucleotide (exemple: &#8220;AAAAA&#8221;) accepted</li>
+<li>The millimolar (mM) concentration of monovalent salt cations: 50</li>
+<li>Maximum number of unknown bases (N) allowable in any primer: 0</li>
+<li>Maximum allowable 3&#8217;-anchored global alignment score: 3</li>
+<li>Parameters for checking hairpins, self-dimerisation and dimerisation between left and right primers</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>No SNP allowed with a gmaf &gt; 0.05 in primer sequence</li>
+<li>4 repetitions maximum of di-nucleotides allowed in primer sequence</li>
+<li>BLAST parameters:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>blast-short command</li>
+<li>get only hits with an e-value &lt; 1, identity percentage of 100% and pourcentage of sequence covered of 80%</li>
+<li>detects hybridisation elsewhere in the genome when the distance between the left and right primer is &lt; 1000 base pairs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Target.py parameters:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>range equal to 100.</li>
+<li>the list of primers pairs are sorted by TFGR (no sorted by penalty).</li>
+<li>doesn&#8217;t remove primers pair with hybridisation sites.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Launch parameters (main.py)</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Performs BLAST.</li>
+<li>Checks overlap.</li>
+<li>Doesn&#8217;t execute either multiplex or pseudo-multiplex.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>MultiplexMachine parameters:</li>
+</ul>
+<blockquote class="last">
+<div><ul class="simple">
+<li>100 chromosomes as initial population</li>
+<li>500 generations</li>
+<li>Probability of mutation of 20%</li>
+<li>Probability of cross-over of 30%</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<p>Of course, the value of each parameter can be changed but will change the output of the program. We choose theses parameters above to fit as good as we can to ThermoFisher algorithm (and by respect to primer design procedure in general). <strong>You can change each of theses parameters in config.py</strong></p>
+</div>
+<div class="section" id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Week 1:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>parse the CSV data file.</li>
+<li>Get the sequence from ucsc containing the varient, search of an adequate library.</li>
+<li>Integration of primer3 algorithm to design pairs of primers along the sequence. At each iteration, the algorithm remove one nucleotide at both end of the sequence and compute primers pair (symetric sub-string)</li>
+<li>Search of adequate parameters and exploration of primer3 API.</li>
+<li>Search of a PCR in-silico program. Tentative to use MPprimer (<a class="reference external" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-143">https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-143</a>) but failed because source code in python 2 and errors in indentations</li>
+<li>Search other alternative of MPprimer, find SIGMA ALDRICH and BIORAD but the company must use ThermoFisher website due to the PCR machine produced by ThermoFisher.</li>
+<li>Implementation of a function that creates a bed file.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Week 2:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Research of good settings of primer3 to match as good as possible to Ampliseq design</li>
+<li>Optimisation of the function that compute all primers pairs of a sequence. Using a symetric approach, it don&#8217;t compute all possible primers. So, the amelioration computes all possibles pairs.</li>
+<li>Submission of my program output to ThermoFisher. Why some targets fail ? Research of reasons of failure...</li>
+<li>SNP detection in primers sequences using my variant library. A SNP in a primer sequence can be a cause of failure.</li>
+<li>Integration of Needleman &amp; Wunsch to align two primer&#8217;s sequences. Avoid it because the alignment with gaps in the sequence don&#8217;t have sense with primers.</li>
+<li>Check of self-hybridisation and hairpin in primer&#8217;s sequences.</li>
+<li>Begin of implementation of the multiplex using a genetic algorithm (<a class="reference external" href="http://link.springer.com/article/10.1007/s00500-006-0137-8">http://link.springer.com/article/10.1007/s00500-006-0137-8</a>).</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Week 3:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Finalisation of the multiplex. Discussion of parameters.</li>
+<li>The multiplex don&#8217;t produced results expected. It&#8217;s a failure.</li>
+<li>Thinking of another multiplex algorithm (the pseudo mutliplex)</li>
+<li>Discovery of new constraints such as GC-clamp, poly-bases, di-nucleotides repeats, overlap ...</li>
+<li>Research a library for blasting primer&#8217;s sequences (could be one cause of failure in Ampliseq program)</li>
+<li>Wrapping blast in Python using BLAST+ suite.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Week 4:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Implementation of the pseudo-multiplex thinked the last week. It&#8217;s a NP-complete problem.</li>
+<li>Discussion on how to find an optimum that will be accepted by ThermoFisher</li>
+<li>Optimisation of BLAST wrapper algorithm.</li>
+<li>Code review: the code respect PEP8 guideline.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Week 5</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>More comments of all functions of the program to produce a pydoc using Sphinx (<a class="reference external" href="http://www.sphinx-doc.org/en/1.4.8/">http://www.sphinx-doc.org/en/1.4.8/</a>).</li>
+<li>Creation of documentation of the project.</li>
+<li>Implementation of unit tests for parser.py, target.py, primer.py, primersPair.py. In addition, some bugs have been fixed.</li>
+<li>Creation of UML diagram.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Week 6</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Finishing unit tests</li>
+<li>Bug fixed</li>
+<li>Finishing documentation</li>
+<li>Creation of postTreatments.py and conf.py</li>
+<li>Update UML diagram</li>
+<li>Tentative to remove the two remaining errors in ThermoFisher by calculate the GC pourcentage, dinucleotide repetition and monoucleotide repetition between primers. Unfortunately, it&#8217;s not the cause of errors.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="difficulties-and-perspectives">
+<h2>Difficulties and perspectives<a class="headerlink" href="#difficulties-and-perspectives" title="Permalink to this headline">¶</a></h2>
+<p>The Ampliseq design algorithm of ThermoFisher is &#8220;black box&#8221;. The pipeline details briefly what it does but elude a lot of things. It&#8217;s difficult to implement an algorithm that micmic Ampliseq due to a lot of constraints that we don&#8217;t know.</p>
+<ul class="simple">
+<li>Ampliseq doesn&#8217;t likely use Primer3 program to create primers. However, Primer3 is the only program with that purpose and serious found. Are parameters of Primer3 good setted ? Is it the same parameters that Ampliseq use ?</li>
+<li>Wich BLAST distribution use ThermoFisher? On wich database version of hg19 database?</li>
+<li>my_variant library use the latest version of dbsnp. Does Ampliseq use the lastest ? I don&#8217;t thing so.</li>
+<li>multiplex algorithms find a local optimum (optimized solution) but makes errors in Ampliseq? Wich technique ThermoFisher use?</li>
+</ul>
+<p>The remaining work involve a lot of research.</p>
+<p>Additionally, <strong>validate our solution to ampliseq program take a lot of times: nearly one hour if BLAST enable + 1 to 2 hours in Ampliseq program</strong>. So it&#8217;s not easy to know if our solution will work.</p>
+</div>
+</div>
+<div class="section" id="submission-to-ampliseq-tutorial">
+<h1>Submission to Ampliseq tutorial<a class="headerlink" href="#submission-to-ampliseq-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Here is a small tutorial to use the right Ampliseq algorithm.</p>
+<ul class="simple">
+<li>Go to <a class="reference external" href="https://ampliseq.com">https://ampliseq.com</a> and sign in (you have to create an account if you don&#8217;t have one).</li>
+<li>Name your design and select options like below and click on &#8220;add targets&#8221;</li>
+</ul>
+<a class="reference external image-reference" href="ampl.png"><img alt="_images/ampl.png" src="_images/ampl.png" /></a>
+<ul class="simple">
+<li>Click on &#8220;Upload File&#8221;, Type &#8220;BED File&#8221; and then choose the file created by the algorithm and then select &#8220;cfDNA&#8221; type. <strong>The &#8220;errors&#8221; are due to comments in the bed file, no worry</strong></li>
+</ul>
+<a class="reference external image-reference" href="ampl2.png"><img alt="_images/ampl2.png" src="_images/ampl2.png" /></a>
+<ul class="simple">
+<li>Click on &#8220;Submit targets&#8221; at the top of the page. Your targets are submitted. You will receive an e-mail with the results.</li>
+</ul>
+</div>
+<div class="section" id="acknowledge">
+<h1>Acknowledge<a class="headerlink" href="#acknowledge" title="Permalink to this headline">¶</a></h1>
+<p>I would like to thanks all person involve one way or another in my project and in particular Maxime Lienard that gives a great help and Gregori Ghitti for his advices. I also give a big thank you to the company, ONCODNA, that recruit me for this internship. Thank you for giving me a concrete project that meet the needs of biologists. This was a great first experience in the professional world, very instructive and challenging.</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+<div class="section" id="useful-links">
+<h1>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>UCSC: <a class="reference external" href="https://genome.ucsc.edu/">https://genome.ucsc.edu/</a></li>
+<li>primer3 API: <a class="reference external" href="http://primer3.sourceforge.net/primer3_manual.htm">http://primer3.sourceforge.net/primer3_manual.htm</a></li>
+<li>BLAST+ command line option: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279675/">https://www.ncbi.nlm.nih.gov/books/NBK279675/</a></li>
+<li>dbSNP: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/projects/SNP/">https://www.ncbi.nlm.nih.gov/projects/SNP/</a></li>
+<li>ThermoFisher Ampliseq pipeline: <a class="reference external" href="https://www.ampliseq.com/help/pipelineDetails.action">https://www.ampliseq.com/help/pipelineDetails.action</a></li>
+<li>ThermoFisher hotspots design: <a class="reference external" href="https://www.ampliseq.com/help/hotspotDesigns.action">https://www.ampliseq.com/help/hotspotDesigns.action</a></li>
+<li>Multiple primer analyser by ThermoFisher: <a class="reference external" href="https://www.thermofisher.com/be/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html#/legacy=www.thermoscientificbio.com">https://www.thermofisher.com/be/en/home/brands/thermo-scientific/molecular-biology/molecular-biology-learning-center/molecular-biology-resource-library/thermo-scientific-web-tools/multiple-primer-analyzer.html#/legacy=www.thermoscientificbio.com</a></li>
+<li>Designing PCR and Sanger Sequencing Primers– Seq It Out #5: <a class="reference external" href="https://www.youtube.com/watch?v=P6Nm9Vxyzj0&amp;list=PLGlvFEwL2wDFVLBA1egJFwHyetpVDPExK&amp;index=13">https://www.youtube.com/watch?v=P6Nm9Vxyzj0&amp;list=PLGlvFEwL2wDFVLBA1egJFwHyetpVDPExK&amp;index=13</a></li>
+<li>Tips for design PCR primers: <a class="reference external" href="https://www.youtube.com/watch?v=OcN6mML3DGI">https://www.youtube.com/watch?v=OcN6mML3DGI</a></li>
+<li>my_variant documentation: <a class="reference external" href="http://docs.myvariant.info/en/latest/doc/data.html">http://docs.myvariant.info/en/latest/doc/data.html</a></li>
+<li>pydna: <a class="reference external" href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0544-x">http://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0544-x</a></li>
+<li>multiplex algorithm: <a class="reference external" href="http://link.springer.com/article/10.1007/s00500-006-0137-8">http://link.springer.com/article/10.1007/s00500-006-0137-8</a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to primers design&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#launching">Launching</a></li>
+<li><a class="reference internal" href="#code-documentation">Code documentation</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#global-information">Global information</a><ul>
+<li><a class="reference internal" href="#project-motivation">Project motivation</a></li>
+<li><a class="reference internal" href="#state-of-work">State of work</a></li>
+<li><a class="reference internal" href="#parameters-used">Parameters used</a></li>
+<li><a class="reference internal" href="#workflow">Workflow</a></li>
+<li><a class="reference internal" href="#difficulties-and-perspectives">Difficulties and perspectives</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#submission-to-ampliseq-tutorial">Submission to Ampliseq tutorial</a></li>
+<li><a class="reference internal" href="#acknowledge">Acknowledge</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#useful-links">Useful links</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="next chapter">main.py</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="main.py"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">primers design 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Nicolas Potie for ONCODNA.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

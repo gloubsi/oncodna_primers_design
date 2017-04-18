@@ -1,0 +1,11 @@
+selected	follow	type	chr	pos	gene	cdna	aa	softs	varfreq	igv	bio_imp				var_id	varkey	
+1	0	SNV	chr6	117622183	ROS1	c.6686C>G	p.S2229C	VC+	0.5105	?	Probably Polymorphism	-	-	-	504	CHR6_117622184_G_C	0
+1	0	SNV	chr6	117622187	ROS1	c.6682A>C	p.K2228Q	VC+	0.5105	?	Probably Polymorphism	-	-	-	505	CHR6_117622188_T_G	0
+1	0	SNV	chr6	117622232	ROS1	c.6637G>A	p.D2213N	VC+	0.4504	?	Probably Polymorphism	-	-	-	506	CHR6_117622233_C_T	0
+1	0	SNV	chr9	98209593	PTCH1	c.3944C>T	p.P1315L	VC+	0.4671	?	Probably Polymorphism	-	-	-	719	CHR9_98209594_G_A	0
+1	0	SNV	chr9	139405260	NOTCH1	c.139405105-4G>A	-		VC+	0.3605	?	Unknown	-	-	-	737	CHR9_139405261_C_T	0
+1	0	SNV	chr4	55593463	KIT	c.1621A>C	p.M541L	VC+	0.4018	?	Probably Polymorphism	-	-	-	1151	CHR4_55593464_A_C	0
+1	0	SNV	chr11	108175461	ATM	c.5557G>A	p.D1853N	VC+	0.4356	?	Probably Polymorphism	-	-	-	2938	CHR11_108175462_G_A	0
+1	0	SNV	chr6	117683820	ROS1	c.3326C>T	p.S1109L	VC+	0.3488	?	Probably Polymorphism	-	-	-	16580	CHR6_117683821_G_A	0
+1	0	SNV	chr17	41223093	BRCA1	c.4837A>G	p.S1613G	VC+	0.4611	?	Probably Polymorphism	-	-	-	33925	CHR17_41223094_T_C	0
+1	0	SNV	chr17	41243999	BRCA1	c.3548A>G	p.K1183R	VC+	0.4621	?	Probably Polymorphism	-	-	-	33929	CHR17_41244000_T_C	0
