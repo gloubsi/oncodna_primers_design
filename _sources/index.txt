@@ -99,7 +99,7 @@ The program create a bed file "chrom.bed" (in the picture, just first 12 targets
 .. image:: bed_file.png
 	:target: bed_file.png
 	
-**mutation position display only one position in the range but it could have more than one position in the target. An amelioration is to list all mutations positions. One way to do it is to create an object regrouping two or more target that have been merged**
+**mutation position display only one position in the range but it could have more than one position in the target. An amelioration is to list all mutations positions within the target. One way to do it is to create an object regrouping two or more target that have been merged**
 	
 And the result of ThermoFisher (with BLAST disabled):
 
